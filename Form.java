@@ -20,7 +20,7 @@ JButton button8=new JButton("8");
 JButton button9=new JButton("9");
 JButton buttonOps=new JButton("+/-");
 JButton buttonPoint=new JButton(".");
-JButton buttonCent=new JButton("x^13");
+JButton buttonCent=new JButton("str^str");
 JButton buttonBack=new JButton("C");
 JButton buttonSE=new JButton("SE");
 JButton buttonSum=new JButton("+");
@@ -28,7 +28,7 @@ JButton buttonMul=new JButton("*");
 JButton buttonDivide=new JButton("/");
 JButton buttonSub=new JButton("-");	
 JButton buttonStart=new JButton("=");
-JButton buttonDiv=new JButton("x^2/x");	                    
+JButton buttonDiv=new JButton("sqrt");	                    
 String operation = "+,-,*,/";
 double firstnum;
 double secondnum;
@@ -108,19 +108,18 @@ buttonOps.addActionListener(new ActionListener(){
 	@Override
 	public void actionPerformed(ActionEvent e){
 		double ops = Double.parseDouble(String.valueOf(display.getText()));
-		ops=ops*(-1);
+		ops*=-1;
 		display.setText(String.valueOf(ops));
-		
-	}
+		}
 });
 buttonDiv.addActionListener(new ActionListener(){
 	@Override
 	public void actionPerformed(ActionEvent e){
 	double firstnum=Double.parseDouble(display.getText());
 	double secondnum=Double.parseDouble(display.getText());
-		String d=display.getText();
-	if(d.indexOf("")==0)display.setText(Math.sqrt(firstnum*secondnum/secondnum)+"");
-   }
+	String sq=display.getText();
+	if(sq.indexOf("")==0)display.setText(Math.sqrt(firstnum*secondnum/secondnum)+"");
+	 }
 });
 buttonPoint.addActionListener(
   new ActionListener(){
@@ -143,9 +142,8 @@ buttonPanel.add(buttonCent);
 	           	public void actionPerformed(ActionEvent e){
 	           		double firstnum=Double.parseDouble(display.getText());
 	           		double secondnum=Double.parseDouble(display.getText());
-	           		String d=display.getText();
-if(d.indexOf("")==0)display.setText(firstnum*secondnum*firstnum*secondnum*firstnum*secondnum*firstnum*secondnum*firstnum*secondnum*firstnum*secondnum*firstnum +""); 
-		      
+	           		String Pow=display.getText();
+                if(Pow.indexOf("")==0)display.setText(Math.pow(firstnum,secondnum)+"");	
    }
 });
    buttonPanel.add(buttonSE);
@@ -204,7 +202,7 @@ double   secondnum=Double.parseDouble(display.getText());
    else if(operation=="/"){
        display.setText((firstnum/secondnum)+"");
    }
-            
+         
 }
 });
 setBounds(400,250,400,250);
