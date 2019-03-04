@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class form extends JFrame {
+public class Form extends JFrame {
    
 	/**
 	 * @author rodomod 03.03.2019
@@ -40,7 +40,7 @@ public class form extends JFrame {
     double firstnum;
     double secondnum;
 
-form() {
+Form() {
         super("form");
 button0.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -209,7 +209,7 @@ buttonStart.addActionListener(new ActionListener() {
     }
 
     public static void main(String[] args) {
-        new form();
+        new Form();
     }
 }
 
