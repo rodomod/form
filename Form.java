@@ -12,7 +12,7 @@ public class Form extends JFrame {
 	/**
 	 * @author rodomod 03.03.2019
 	 */
-	private static final long serialVersionUID = 3862587980478740857L;
+
 	JTextArea display = new JTextArea();
     JPanel buttonPanel = new JPanel(new GridLayout(4, 20));
     JButton button0 = new JButton("0");
