@@ -6,13 +6,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-
 public class Form extends JFrame {
-   
-	/**
+   /**
 	 * @author rodomod 03.03.2019
 	 */
-
+	private static final long serialVersionUID = 3862587980478740857L;
 	JTextArea display = new JTextArea();
     JPanel buttonPanel = new JPanel(new GridLayout(4, 20));
     JButton button0 = new JButton("0");
@@ -37,10 +35,9 @@ public class Form extends JFrame {
     JButton buttonStart = new JButton("=");
     JButton buttonDiv = new JButton("sqrt");
     String operation = "+,-,*,/";
-    double firstnum;
-    double secondnum;
-
-Form() {
+    double fm;
+    double sm;
+ Form() {
         super("form");
 button0.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -101,11 +98,11 @@ buttonOps.addActionListener(new ActionListener() {
         });
 buttonDiv.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                double firstnum = Double.parseDouble(display.getText());
-                double secondnum = Double.parseDouble(display.getText());
+                double fm = Double.parseDouble(display.getText());
+                double sm = Double.parseDouble(display.getText());
                 String d = display.getText();
                 if (d.indexOf("") == 0) {
-                    display.setText(Math.sqrt(firstnum * secondnum / secondnum) + "");
+                    display.setText(Math.sqrt(fm * sm / sm) + "");
                 }
             }
         });
@@ -119,8 +116,8 @@ buttonPoint.addActionListener(new ActionListener() {
         });
 buttonBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String temp = display.getText();
-              display.setText(temp.substring(0, temp.length() - 1));
+                String tmp = display.getText();
+              display.setText(tmp.substring(0, tmp.length() - 1));
             }
         });
 buttonCent.addActionListener(new ActionListener() {
@@ -139,43 +136,43 @@ buttonSE.addActionListener(new ActionListener() {
         });
 buttonSum.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                firstnum = Double.parseDouble(display.getText());
+                fm = Double.parseDouble(display.getText());
                 display.setText("");
                 operation = "+";
             }
         });
 buttonMul.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                firstnum = Double.parseDouble(display.getText());
+                fm = Double.parseDouble(display.getText());
                 display.setText("");
                 operation = "*";
             }
         });
 buttonDivide.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                firstnum = Double.parseDouble(display.getText());
+                fm = Double.parseDouble(display.getText());
                 display.setText("");
                 operation = "/";
             }
         });
 buttonSub.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                firstnum = Double.parseDouble(display.getText());
+                fm = Double.parseDouble(display.getText());
                 display.setText("");
                 operation = "-";
             }
         });
 buttonStart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            double secondnum = Double.parseDouble(display.getText());
+            double sm = Double.parseDouble(display.getText());
  switch(operation)  {
-                case "+" : display.setText(firstnum + secondnum + "");
+                case "+" : display.setText(fm + sm + "");
            break;
-                case "-" : display.setText(firstnum - secondnum + "");
+                case "-" : display.setText(fm - sm + "");
            break;
-                case "*" : display.setText(firstnum * secondnum + ""); 
+                case "*" : display.setText(fm * sm + ""); 
            break;
-                case "/" : display.setText(firstnum / secondnum + "");   
+                case "/" : display.setText(fm / sm + "");   
            break;
                    }
     }
@@ -207,10 +204,9 @@ buttonStart.addActionListener(new ActionListener() {
         buttonPanel.add(buttonSE);
         setVisible(true);
     }
-
-    public static void main(String[] args) {
-        new Form();
-    }
+ public static void main(String[] args)  { 
+	 new Form(); 
+	 }
 }
 
 
