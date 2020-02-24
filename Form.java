@@ -8,9 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 public class Form extends JFrame {
    /**
-	 * @author rodomod 03.03.2019
+	 * @author rodomod 24.02.2020
 	 */
-	private static final long serialVersionUID = 3862587980478740857L;
+
 	JTextArea display = new JTextArea();
     JPanel buttonPanel = new JPanel(new GridLayout(4, 20));
     JButton button0 = new JButton("0");
@@ -204,9 +204,8 @@ buttonStart.addActionListener(new ActionListener() {
         buttonPanel.add(buttonSE);
         setVisible(true);
     }
- public static void main(String[] args)  { 
+ public static void main(String[] args)  {
+	 JFrame.setDefaultLookAndFeelDecorated(true);
 	 new Form(); 
 	 }
 }
-
-
