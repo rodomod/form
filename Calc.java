@@ -534,20 +534,21 @@ public class Calc extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_5ActionPerformed
 
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
-        double sm = Double.parseDouble(display.getText());
-        if ("+".equals(operation)) {
-            display.setText(fm + sm + "");
-
-        } else if ("-".equals(operation)) {
-            display.setText(fm - sm + "");
-
-        } else if ("*".equals(operation)) {
-            display.setText(fm * sm + "");
-
-        } else if ("/".equals(operation)) {
-            display.setText(fm / sm + "");
-
-        }
+ double sm = Double.parseDouble(display.getText());
+		switch (operation) {
+		case "+":
+			display.setText(fm + sm + "");
+			break;
+		case "-":
+			display.setText(fm - sm + "");
+			break;
+		case "*":
+			display.setText(fm * sm + "");
+			break;
+		case "/":
+			display.setText(fm / sm + "");
+			break;
+		}
     }//GEN-LAST:event_btn_4ActionPerformed
     // End of variables declaration//GEN-END:variables
 }
